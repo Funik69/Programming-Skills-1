@@ -1,0 +1,18 @@
+class Solution {
+public:
+    bool isHappy(int n) {
+        int sum=0;
+        while(n!=0){
+            int val=n%10;
+            sum+=val*val;
+            n=n/10;
+        }
+        n=sum;
+        if(n==89)
+            return false;
+        else if(n==1)
+            return true;
+        
+        return isHappy(n);
+    }
+};
